@@ -49,7 +49,7 @@ public class TrackRepositoryTest
 
     @Test
     public void testSaveTrackFailure(){
-        Track testTrack = new Track(103,"Vishnu","IBM");
+        Track testTrack = new Track(103,"Kanthi","IBM");
         trackRepository.save(track);
         Track fetchTrack = trackRepository.findById(track.getId()).get();
         Assert.assertNotSame(testTrack,track);
@@ -57,14 +57,14 @@ public class TrackRepositoryTest
 
     @Test
     public void testGetAllTracks(){
-        Track track = new Track(104,"Chandana","GetTracks");
-        Track track1 = new Track(105,"VishnuChandana","GetTracks");
+        Track track = new Track(104,"Aishwarya","GetTracks");
+        Track track1 = new Track(105,"KanthiAishwarya","GetTracks");
         trackRepository.save(track);
         trackRepository.save(track1);
 
         List<Track> list = trackRepository.findAll();
-        Assert.assertEquals("Chandana",list.get(0).getName());
-        Assert.assertEquals("VishnuChandana",list.get(1).getName());
+        Assert.assertEquals("Aishwarya",list.get(0).getName());
+        Assert.assertEquals("KanthiAishwarya",list.get(1).getName());
 
     }
 

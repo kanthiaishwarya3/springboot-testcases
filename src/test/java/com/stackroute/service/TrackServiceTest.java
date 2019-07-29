@@ -80,10 +80,10 @@ public class TrackServiceTest {
 
 
         when(trackRepository.existsById(track.getId())).thenReturn(true);
-        track.setName("Vishnu");
+        track.setName("Kanthi");
         Track track1=trackService.updateTrack(track);
         when(trackRepository.save((Track)any())).thenReturn(track1);
-        Assert.assertEquals("Vishnu",track1.getName());
+        Assert.assertEquals("Kanthi",track1.getName());
     }
 
     @Test(expected = TrackNotFoundException.class)
